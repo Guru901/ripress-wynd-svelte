@@ -50,7 +50,7 @@ elif command -v nc >/dev/null 2>&1 && nc -z localhost 3000 >/dev/null 2>&1; then
   PORT_IN_USE=true
 fi
 
-if command -v pgrep >/dev/null 2>&1 && pgrep -f "ripress-lume-react-minimal-demo" >/dev/null 2>&1; then
+if command -v pgrep >/dev/null 2>&1 && pgrep -f "react-wynd-svelte-minimal-demo" >/dev/null 2>&1; then
   PROCESS_RUNNING=true
 fi
 

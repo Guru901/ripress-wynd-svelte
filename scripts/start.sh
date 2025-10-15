@@ -11,7 +11,7 @@ if [ ! -d "dist" ]; then
   exit 1
 fi
 
-BIN="${REPO_ROOT}/target/release/ripress-lume-react-minimal-demo"
+BIN="${REPO_ROOT}/target/release/react-wynd-svelte-minimal-demo"
 if [ ! -x "$BIN" ]; then
   echo "Release binary not found at $BIN. Run scripts/build.sh first." >&2
   exit 1

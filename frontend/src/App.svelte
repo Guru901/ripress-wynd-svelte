@@ -1,5 +1,5 @@
 <script lang="ts">
-  let hello = $state<any>(null);
+  let hello = $state<string>("");
 
   let globalWs = $state<WebSocket | null>(null);
   let input = $state<string>("");
@@ -7,7 +7,7 @@
 
   $effect(() => {
     (async () => {
-      const ws = new WebSocket("ws://localhost:3000");
+      const ws = new WebSocket("ws://localhost:3000/ws");
 
       ws.onopen = () => {
         globalWs = ws;
@@ -40,7 +40,7 @@
     <h1>Ripress + Wynd + Svelte minimal demo</h1>
     <div>
       <h2>/hello</h2>
-      <pre>{hello ? JSON.stringify(hello, null, 2) : "Loading..."}</pre>
+      <pre>{hello ?? "Loading..."}</pre>
     </div>
   </div>
   <div>
@@ -56,21 +56,3 @@
     </ul>
   </div>
 </main>
-
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
